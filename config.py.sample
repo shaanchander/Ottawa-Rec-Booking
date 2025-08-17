@@ -1,0 +1,12 @@
+# activity info
+participants = 1
+dateTime = '' # Local time in Ottawa - Format: "6:15 PM Monday August 18, 2025"
+
+# booking info
+phoneNumer = ''
+bookingEmail = ''
+name = ''
+
+# gmail info
+user = "" # Full gmail email
+gmail_pass = "" # Generate an app password for here

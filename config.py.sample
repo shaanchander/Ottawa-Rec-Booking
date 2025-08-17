@@ -1,6 +1,7 @@
 # activity info
 participants = 1
 dateTime = '' # Local time in Ottawa - Format: "6:15 PM Monday August 18, 2025"
+activityUrl = "" # Go to booking page for your rec centre, copy the url of the desired activity
 
 # booking info
 phoneNumer = ''

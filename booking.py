@@ -12,9 +12,6 @@ from functions import getGmailCode
 
 from config import *
 
-# make sure to replace url below with url for specified activity
-url = ""
-
 ##############################################################################
 
 options = webdriver.ChromeOptions()
@@ -28,7 +25,7 @@ driver = Driver(uc=True, headless=False)
 driver.delete_all_cookies()
 
 # url of specific activity
-driver.get(url)
+driver.get(activityUrl)
 
 # pick number of participants
 countElem = WebDriverWait(driver,2).until(EC.element_to_be_clickable((By.ID, 'reservationCount')))

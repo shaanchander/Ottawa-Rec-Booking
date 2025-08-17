@@ -30,21 +30,13 @@ def getGmailCode(sentTime):
             res, msg = mail.fetch(str(i), "(RFC822)")
             for response in msg:
                 if isinstance(response, tuple):
-                    # print(response[1])
+                    
                     msg = email.message_from_bytes(response[1])
 
-                    print(msg['Date'])
                     # make date of email reception into datetime obj
                     receivedTime = datetime.strptime(msg['Date'].replace(' (UTC)', ''), "%a, %d %b %Y %H:%M:%S %z")
-                    # print(receivedTime)
-                    # input()
-
-                    # print(sentTime)
-                    # print(receivedTime)
 
                     deltaSeconds = (receivedTime - sentTime).total_seconds()
-
-                    # input()
 
                     # Store the senders email
                     sender = msg["From"]
@@ -53,7 +45,6 @@ def getGmailCode(sentTime):
                     subject = msg["Subject"]
 
                     print(f'email delta: {deltaSeconds}')
-                    # input()
 
                     if 'noreply@frontdesksuite.com' not in sender or subject != 'Verify your email' or deltaSeconds > 30 or deltaSeconds < 0:
                         sleep(1)
@@ -76,8 +67,6 @@ def getGmailCode(sentTime):
 
                     body = str(body)
                     code = body.split('Your verification code is:\\r\\n')[1].split('.')[0]
-                    # print(code)
-                    # print(datetime.now())
 
                     mail.close()
                     mail.logout()
